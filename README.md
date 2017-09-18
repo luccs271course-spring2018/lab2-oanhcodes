@@ -2,7 +2,9 @@
 
 # Team project
 
-Work in teams of two
+Work in teams of two. 
+
+Collaborators: Linda Ho
 
 # Objectives
 
