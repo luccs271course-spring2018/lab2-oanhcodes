@@ -11,6 +11,7 @@ public class Main {
         final Team t1 = new Team("USA", "Klinsmann", 500);
         final Team t2 = new Team("Chile", "Pizzi", 600);
         final Team t3 = new Team("Germany", "Löw", 700);
+
         final Team[] array = {t1, t2, t3};
         final List<Team> list = Arrays.asList(array);
 
