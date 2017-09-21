@@ -31,8 +31,8 @@ public class Team {
 
         // DONE validity checking for headcoach
         // Use Regex to make sure headcoach name only has letters
-        if (!headcoach.matches("[a-zA-Z_]+")) {
-            throw new IllegalArgumentException("Invalid headcoach name");
+        if (headcoach == null) {
+            throw new IllegalArgumentException("headcoach is null");
         }
 
         this.headcoach = headcoach;
