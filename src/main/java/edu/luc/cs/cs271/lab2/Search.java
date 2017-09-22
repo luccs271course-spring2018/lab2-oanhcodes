@@ -82,17 +82,14 @@ public class Search {
 
             if (arr[low].getFunding() >= minFunding) {
                 return Optional.of(low);
-            } else if (arr[mid].getFunding() == minFunding) {
-                return Optional.of(mid);
             } else if (arr[mid].getFunding() < minFunding) {
                 low = mid + 1;
-            } else if (arr[mid].getFunding() > minFunding) {
+            } else if (arr[mid].getFunding() >= minFunding) {
                 high = mid - 1;
                 if (arr[high].getFunding() < minFunding) {
                     return Optional.of(mid);
                 }
             }
-
         }
         return Optional.empty();
     }
