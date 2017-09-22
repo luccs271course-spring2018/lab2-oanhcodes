@@ -112,4 +112,11 @@ public class TestSearch {
         final int minFunding = 100;
         assertEquals(Optional.of(1), Search.findTeamMinFundingFast(arr, minFunding));
     }
+
+    @Test
+    public void testFindMinFundingArrayFast3000() {
+        final Team[] arr = makeArrayFixture(300);
+        final int minFunding = 1780;
+        assertEquals(Optional.of(18), Search.findTeamMinFundingFast(arr, minFunding));
+    }
 }
