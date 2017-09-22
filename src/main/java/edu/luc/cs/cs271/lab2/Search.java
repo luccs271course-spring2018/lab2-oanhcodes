@@ -80,15 +80,15 @@ public class Search {
         while (low <= high) {
             final int mid = (low + high) / 2;
 
+            //Check if the last possible value meets the condition
             if (arr[low].getFunding() >= minFunding) {
                 return Optional.of(low);
+            } else if (arr[mid].getFunding() >= minFunding && arr[mid -1].getFunding() < minFunding) {
+                return Optional.of(mid);
             } else if (arr[mid].getFunding() < minFunding) {
                 low = mid + 1;
-            } else if (arr[mid].getFunding() >= minFunding) {
+            } else {
                 high = mid - 1;
-                if (arr[high].getFunding() < minFunding) {
-                    return Optional.of(mid);
-                }
             }
         }
         return Optional.empty();
