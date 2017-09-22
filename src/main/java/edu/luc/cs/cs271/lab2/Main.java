@@ -79,5 +79,4 @@ public class Main {
         System.out.println("Ranking: " + (pos + 1));
     }
 
-
 }
