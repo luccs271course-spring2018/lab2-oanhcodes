@@ -21,6 +21,8 @@ public class Search {
         }
         // If it does not exist in the array then return an index of -1
         return Optional.empty();
+
+        //O(n) grows linearly and in direct proportion to the size of the array
     }
 
     /**
@@ -36,6 +38,8 @@ public class Search {
             }
         }
         return Optional.empty();
+
+        //O(n) grows linearly and in direct proportion to the size of the array
     }
 
     /**
@@ -55,6 +59,7 @@ public class Search {
             }
         }
         return Optional.empty();
+        //O(n) grows linearly and in direct proportion to the size of the array
     }
 
     /**
@@ -80,17 +85,31 @@ public class Search {
         while (low <= high) {
             final int mid = (low + high) / 2;
 
-            //Check if the last possible value meets the condition
+            //Check if the lowest possible value meets the condition
+            //If mid value is greater than or equal to minFunding, set high equal to mid.
+            //If mid value is lower than minFunding, then set low equal to mid + 1
             if (arr[low].getFunding() >= minFunding) {
                 return Optional.of(low);
-            } else if (arr[mid].getFunding() >= minFunding && arr[mid -1].getFunding() < minFunding) {
-                return Optional.of(mid);
-            } else if (arr[mid].getFunding() < minFunding) {
-                low = mid + 1;
+            } else if (arr[mid].getFunding() >= minFunding) {
+                high = mid;
             } else {
-                high = mid - 1;
+                low = mid + 1;
             }
+
+            //First Solution
+//            if (arr[low].getFunding() >= minFunding) {
+//                return Optional.of(low);
+//            } else if (arr[mid].getFunding() >= minFunding && arr[mid -1].getFunding() < minFunding) {
+//                return Optional.of(mid);
+//            } else if (arr[mid].getFunding() < minFunding) {
+//                low = mid + 1;
+//            } else {
+//                high = mid - 1;
+//            }
+
         }
+
+        //O(log N) growth will flatten as the data set size gets smaller.
         return Optional.empty();
     }
 }

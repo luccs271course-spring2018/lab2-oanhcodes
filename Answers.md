@@ -5,6 +5,15 @@
 
 ### What is the complexity of each of the four search methods in terms of array or list size n?
 
+1.  findTeamPosition - O(n) grows linearly and in direct proportion to the size of the array
+
+2. findTeamPosition - O(n) grows linearly and in direct proportion to the size of the array
+
+3. findTeamMinFunding - O(n) grows linearly and in direct proportion to the size of the array
+
+4. findTeamMinFundingFast - O(log n) because we are not searching through every element of the array. We are dividing the number of elements in half each time we search until we can't do it any more. The growth is peaks at the beginning and flattens out as the size of the data set grows.
+
+
 ### What happens in the case of binary search if the array is not sorted?
 
 It would not work. Binary search works by splitting the number of elements in an array in half and comparing the "middle value". In an unsorted array, we would not be able to know with certainty which half of the array to search. 
